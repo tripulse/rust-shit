@@ -1,3 +1,4 @@
-This is the proof that the "hyped" Rust Programming Language ecosystem is immature.
+Ensure that you have the furrylang toolchain installed.
+Then invoke `cargo build --release` to build in ***release*** mode.
 
-First `cargo build --release` then `cargo run -q < /dev/zero > /dev/null` and look at CPU usage spike and low-throughput.
+Then `./target/build/vlr-rs < /dev/zero > /dev/null`, to make your CPU have hiccups.
