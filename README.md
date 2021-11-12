@@ -12,6 +12,12 @@ Then `./target/build/vlr-rs < /dev/urandom > /dev/null`, to make your CPU have h
   which, for `Map<T>`, is not implemented [(E0277)](https://doc.rust-lang.org/error-index.html#E0277). Thus we must use
   `.into_par_iter()` in order to comply trait bounds.
 
+  So even if it's labelled as "abuse", this is what the API forces.
+
+- Why are you `collect()`ing? Can't you use `collect_to_vec()` or `.enumerate().for_each()` and collect to a custom buffer?
+  
+  First, to be a little bit fair to the C code. Second, no I can't because `IntoIndexedParallelIterator` is not implemented for
+  `FlatMap` nor there is a way to turn it so.
 
 # Legal
 This work is composed by means of attacking the Rust programming language community to point out their
